@@ -15,6 +15,15 @@ const routes: Routes = [
             loadChildren: '../home/home.module#HomePageModule'
           }
         ]
+      },
+      {
+        path: 'analysis',
+        children: [
+          {
+            path: '',
+            loadChildren: '../analysis/analysis.module#AnalysisPageModule'
+          }
+        ]
       }
     ]
   },
