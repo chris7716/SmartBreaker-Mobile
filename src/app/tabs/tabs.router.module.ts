@@ -24,6 +24,15 @@ const routes: Routes = [
             loadChildren: '../analysis/analysis.module#AnalysisPageModule'
           }
         ]
+      },
+      {
+        path: 'config',
+        children: [
+          {
+            path: '',
+            loadChildren: '../config/config.module#ConfigPageModule'
+          }
+        ]
       }
     ]
   },
