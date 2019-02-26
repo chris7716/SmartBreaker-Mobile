@@ -15,17 +15,12 @@ const routes: Routes = [
             loadChildren: '../home/home.module#HomePageModule'
           }
         ]
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
