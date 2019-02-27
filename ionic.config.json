@@ -1,6 +1,8 @@
 {
   "name": "SmartBreaker",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "4a440a9a"
 }
