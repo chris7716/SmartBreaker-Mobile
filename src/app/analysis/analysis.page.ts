@@ -23,7 +23,7 @@ export class AnalysisPage implements OnInit {
   ngOnInit() {
 
     //emit value in sequence every 10 second
-    const source = interval(500);
+    const source = interval(200);
     //const text = 'Your Text Here';
     this.subscription = source.subscribe(val => this.getChartData());
 
