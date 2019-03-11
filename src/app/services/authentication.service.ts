@@ -30,7 +30,13 @@ export class AuthenticationService {
   }
  
   login(auth: Auth) {
+    if(auth.username == "admin" && auth.password == "admin123"){
       this.authenticationState.next(true);
+    }
+    else{
+      this.authenticationState.next(false);
+    }
+      
   }
  
   logout() {
