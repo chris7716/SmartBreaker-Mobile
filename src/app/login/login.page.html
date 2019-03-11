@@ -1,0 +1,25 @@
+<ion-content padding>
+
+  <ion-card>
+    <ion-img src="/assets/shapes.svg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>SmartBreaker</ion-card-subtitle>
+      <ion-card-title>LogIn</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="loginForm">
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input formControlName="password"></ion-input>
+        </ion-item>
+      </form>
+      <ion-button (click)="login()" expand="block">Login</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
