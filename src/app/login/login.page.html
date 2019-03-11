@@ -10,12 +10,10 @@
     <ion-card-content>
       <form [formGroup]="loginForm">
         <ion-item>
-          <ion-label>Username</ion-label>
-          <ion-input formControlName="username"></ion-input>
+          <ion-input formControlName="username" placeholder="Username"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Password</ion-label>
-          <ion-input formControlName="password"></ion-input>
+          <ion-input formControlName="password" placeholder="Password"></ion-input>
         </ion-item>
       </form>
       <ion-button (click)="login()" expand="block">Login</ion-button>
