@@ -29,11 +29,7 @@ export class AuthenticationService {
   }
  
   login() {
-    //alert(this.storage.get(TOKEN_KEY))
-    //return this.storage.set(TOKEN_KEY, 'Bearer 1234567').then(() => {
       this.authenticationState.next(true);
-      //alert(this.authenticationState.value)
-    //});
   }
  
   logout() {
