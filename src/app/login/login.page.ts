@@ -25,11 +25,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    //alert("Hiiiiiiii")
     this.authService.login();
-    //this.authService.authenticationState.subscribe(state => {
-    //  console.log(state)
-    //});
   }
 
 }
