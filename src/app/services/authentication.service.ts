@@ -2,6 +2,7 @@ import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
+import { Auth } from '../login/auth';
  
 const TOKEN_KEY = 'auth-token';
  
@@ -28,7 +29,7 @@ export class AuthenticationService {
     })
   }
  
-  login() {
+  login(auth: Auth) {
       this.authenticationState.next(true);
   }
  
