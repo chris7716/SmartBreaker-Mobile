@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Auth } from './auth';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,9 @@ import { Auth } from './auth';
 })
 export class LoginPage implements OnInit {
 
-  auth: Auth;
   loginForm: FormGroup;
   constructor(private authService: AuthenticationService,
-    private formBuilder: FormBuilder, private router: Router) { 
+    private formBuilder: FormBuilder, private router: Router, public alertController: AlertController) { 
 
       this.loginForm = this.formBuilder.group({
         'username': [null, Validators.required],
@@ -27,9 +27,24 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.auth.username = this.loginForm.controls['username'].value;
-    this.auth.password = this.loginForm.controls['password'].value;
-    this.authService.login(this.auth);
+    const auth: Auth = Object.assign({}, this.loginForm.value);
+    this.authService.login(auth);
+
+    if(!this.authService.isAuthenticated()){
+      this.presentAlert();
+    }
+
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Failed',
+      message: 'Invalid Credentials',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 
 }
