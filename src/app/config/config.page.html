@@ -9,20 +9,19 @@
     <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Present Limitation</ion-card-subtitle>
-          <ion-card-title>5 A</ion-card-title>
+          <ion-card-title>{{limitation}} A</ion-card-title>
         </ion-card-header>
       
         <ion-card-content>
             <ion-list>
               
-                <ion-item>
-                  <ion-label>Required Limit</ion-label>
-                  <ion-select placeholder="Select One">
-                    <ion-select-option value="f">5 A</ion-select-option>
-                    <ion-select-option value="m">3 A</ion-select-option>
-                    <ion-select-option value="m">2 A</ion-select-option>
-                  </ion-select>
-                </ion-item>
+              <ion-item>
+                <ion-label>Adjust Limit</ion-label>
+                <ion-range min="0" max="15" pin="true" [(ngModel)]="limitation" color="secondary">
+                  <ion-icon range-left small name="contrast"></ion-icon>
+                  <ion-icon range-right name="contrast"></ion-icon>
+                </ion-range>
+              </ion-item>
               
               </ion-list>
         </ion-card-content>
