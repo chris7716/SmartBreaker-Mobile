@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigPage implements OnInit {
 
+  limitation: number = 5;
+
   constructor() { }
 
   ngOnInit() {
